@@ -22,7 +22,6 @@ docker run -p 8080:8080 receipt-processor
 
 #### Instructions to test the Application
 
-* If you are using Postman:
 * Send receipt for processing - 
 ```sh
 curl --location --request POST 'http://localhost:8080/receipts/process' \
