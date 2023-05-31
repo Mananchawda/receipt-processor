@@ -20,3 +20,36 @@ docker run -p 8080:8080 receipt-processor
 * `application.properties`: Configuration file that provides connection properties for local h2 database connection
 * `pom.xml`: Dependencies manager
 
+#### Instructions to test the Application
+
+* If you are using Postman:
+* Send receipt for processing - 
+```sh
+curl --location --request POST 'http://localhost:8080/receipts/process' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "retailer": "M&M Corner Market",
+  "purchaseDate": "2022-03-20",
+  "purchaseTime": "14:33",
+  "items": [
+    {
+      "shortDescription": "Gatorade",
+      "price": "2.25"
+    },{
+      "shortDescription": "Gatorade",
+      "price": "2.25"
+    },{
+      "shortDescription": "Gatorade",
+      "price": "2.25"
+    },{
+      "shortDescription": "Gatorade",
+      "price": "2.25"
+    }
+  ],
+  "total": "9.00"
+}' 
+```
+* Fetch the points using Receipt ID returned as part of previous request
+```sh
+curl --location --request GET 'http://localhost:8080/receipts/{id}/points'
+```
