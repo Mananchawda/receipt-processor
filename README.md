@@ -22,7 +22,7 @@ docker run -p 8080:8080 receipt-processor
 
 #### Instructions to test the Application
 
-* Send receipt for processing - 
+* Send receipt for processing
 ```sh
 curl --location --request POST 'http://localhost:8080/receipts/process' \
 --header 'Content-Type: application/json' \
