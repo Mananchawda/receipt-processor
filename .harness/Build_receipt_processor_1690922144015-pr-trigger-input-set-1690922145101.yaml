@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_receipt_processor_1690922144015-pr-trigger-input-set
+  identifier: Build_receipt_processor_1690922144015prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_receipt_processor_1690922144015
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
